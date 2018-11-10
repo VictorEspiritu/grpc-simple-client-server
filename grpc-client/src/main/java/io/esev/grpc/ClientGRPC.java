@@ -9,7 +9,7 @@ public class ClientGRPC {
         System.out.println("[CLIENT] Init Client");
         ManagedChannel channel = ManagedChannelBuilder
                                         .forAddress("localhost", 9090)
-                                        .usePlaintext()
+                                        .usePlaintext(true)
                                         .build();
 
         GreetingServiceGrpc.GreetingServiceBlockingStub stub = GreetingServiceGrpc.newBlockingStub(channel);
